@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif ;
+    line-height: 1.5;
+}
+:root {
+    --main-color: #35424a;
+    --second-color: #e8491d;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+/* Global */
+.content {
+    width: 80%;
+    height: 100%;
+    margin:auto;
+    overflow: hidden;
+}
+/* first part of website gonna to be the "header" */
+.header{
+    width: 100%;
+    min-height: 80px;
+    background-color: var(--main-color);
+    border-bottom: 5px solid var(--second-color);
+}
+ .header .content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.header .logo {
+    font-size: 30px;
+    color: #fff;    
+}
+.header .logo span,
+.header .nav .current{
+    color:var(--second-color);
+    font-weight: bold;
+}
+.header .nav {
+    display: flex;
+    color: #fff;
+}
+.header .nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 50px;
+    color: #fff;
+}
+.header .nav a:hover {
+    text-decoration: underline;
+    color: #ccc;
+    font-weight: bold;
+}
+/* make "header" responsive */
+@media (max-width:850px){
+    .header {
+        padding-bottom: 15px;
+    }
+    .header .content {
+        width: 90%;
+        flex-direction: column;
+    }
+    .header .content .logo {
+        margin: 0 0 10px 40px;
+    }
+}
+@media (max-width:350px) {
+    .header .content {
+        width: 100%;
+    }
+    .header .content .logo {
+        font-size: 25px;
+        margin-left: 0px;
+    }
+    .header .content .nav a {
+        margin-left: 15px;
+    }
+}
+/* ...................... */
+/* showcase section */
+.showcase {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../image/img1.jpg) no-repeat center ;
+    background-size: cover;
+    position: relative;
+}
+.showcase::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 0;
+}
+.showcase .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 12;
+}
+.showcase .content h1 {
+    text-align: center;
+    font-size: 60px;
+}
+.showcase .content p {
+font-size: 20px;
+text-align: center;
+}
+/* make Subscribe section responsive */
+@media (max-width:850px) {
+    .showcase .content {
+        padding-bottom: 50px;
+    }
+}
+@media (max-width:450px) {
+    .showcase .content h1 {
+        font-size: 35px;
+    }
+}
+/* ...................... */
+/* subscribe section*/
+.subscribe {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    background-color: var(--main-color);
+    color: #fff;
+}
+.subscribe .content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.subscribe .content h1 {
+    width: 45%;
+    font-size: 22px;
+}
+.subscribe .content form {
+    width:50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.subscribe .content form input{
+width: 70%;
+outline: none;
+border: none;
+padding: 8px 10px;
+}
+.subscribe .content form input:focus {
+border: 2px solid var(--second-color);
+}
+.subscribe .content form button{
+    width: 29%;
+    padding: 8px 10px;
+    outline: none;
+    border: none;
+    background-color: var(--second-color);
+    color: #fff;
+}
+.subscribe .content form button:hover {
+    transform: scale(0.96);
+    background-color: #d1390e;
+}
+/* ...................... */
+/* make Subscribe section responsive */
+@media (max-width:850px) {
+    .subscribe .content {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .subscribe .content form {
+        flex-direction: column;
+    }
+    .subscribe .content h1,
+    .subscribe .content form {
+        width: 100%;
+    }
+    .subscribe .content h1 {
+        text-align: center;
+    }
+    .subscribe .content form input,
+    .subscribe .content form button {
+        width: 100%;
+    }
+    .subscribe .content form input {
+        margin-bottom: 10px;
+    }
+}
+/* ...................... */
+/* boxes section*/
+.boxes {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxes .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.boxes .content .box {
+    flex-basis: 32%;
+    text-align: center;
+}
+.boxes .content .box i {
+    font-size: 60px;
+}
+.boxes .content .box #html {
+    color: rgba(6, 65, 245, 0.959);
+}
+.boxes .content .box #css {
+    color: var(--second-color);
+}
+.boxes .content .box #desktop {
+    color: var(--main-color)
+}
+.boxes .content .box h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+/*  make boxes responsive */
+@media (max-width:773px) {
+    .boxes {
+        padding: 50px 0;
+    }
+    .boxes .content  .box{
+        flex-basis: 48%;
+         margin-top: 20px;
+    }
+}
+@media (max-width:550px) {
+    .boxes .content  .box{
+        flex-basis: 100%;
+         margin-top: 20px;
+    }
+}
+/* End boxes section*/
+/* ...................... */
+
+/* Footer section*/
+.footer {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: #fff;
+}
+.footer .content {
+    text-align: center;
+}
+.footer .content span {
+    color: var(--second-color);
+}
+/* make footer responsive */
+@media (max-width:350px) {
+    .footer .content {
+        font-size: 13px;
+    }
+}
+/* End footer section*/
+/* ...................... */
+/* lets start with about.html */
+.about {
+    width: 100%;
+    padding: 70px 0;
+}
+.about .content {
+    display: grid;
+    grid-template-columns: 70% 25%;
+    column-gap:5%;
+    row-gap:30px;
+}
+.about .content .box p {
+    text-align: justify;
+}
+.about .content .box #special {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    color: #fff;
+}
+.about .content .box:last-of-type {
+    height: fit-content;
+    padding: 20px 10px;
+    background-color: var(--main-color);
+    color: #fff;
+}
+.about .content .box  h3 {
+    margin-bottom: 20px;
+}
+/* make about.html reponsive */
+@media (max-width:750px) {
+   .about .content {
+    grid-template-columns: 100%;
+} 
+.about .content .box, 
+.about .content .box p{
+    text-align: center;
+}
+}
+/* end about.html */
+/* ...................... */
+/* lt'start with survices.html */
+.survices .content {
+    display: grid;
+    grid-template-columns: 70% 28%;
+    column-gap: 2%;
+    padding: 50px 0;
+}
+.survices .content .surv {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 5px;
+}
+.survices .content .surv #head{
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.survices .content .surv .box{
+background-color: #ddd;
+padding: 20px 15px;
+}
+.survices .content .surv .box h3{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.survices .content .surv .box p:last-of-type{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.survices .content .quote {
+    height:max-content;
+    padding: 20px 10px 10px;
+    background-color: var(--main-color);
+    color: #fff;
+}
+.survices .content .quote h2 {
+    margin-bottom: 15px;
+}
+.survices .content .quote form input,
+.survices .content .quote form textarea{
+width: 100%;
+padding: 5px;
+outline: none;
+border: none;
+}
+
+.survices .content .quote form textarea {
+    resize: none;
+    height: 70px;
+}
+.survices .content .quote form input:focus,
+.survices .content .quote form textarea:focus {
+    border: 2px solid var(--second-color);
+    }
+.survices .content .quote form button {
+width: 100px;
+border: none;
+outline: none;
+background-color: var(--second-color);
+color: #fff;
+padding: 10px 20px;
+}
+.survices .content .quote form button:hover {
+    transform: scale(0.96);
+    background-color: #d1390e;
+}
+/* make Survices.html responsive */
+@media(max-width:750px){
+   .survices .content{
+grid-template-columns: 100%;
+row-gap: 30px;
+} 
+}
+
+/* End survices.html */
